@@ -1,0 +1,33 @@
+{
+  "name": "hackerbay-interview-frontend-task",
+  "version": "1.0.0",
+  "description": "A simple game made in react",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saileshkasaju/hackerbay-interview-frontend-task.git"
+  },
+  "keywords": [
+    "react",
+    "game"
+  ],
+  "author": "Sailesh Kasaju",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saileshkasaju/hackerbay-interview-frontend-task/issues"
+  },
+  "homepage": "https://github.com/saileshkasaju/hackerbay-interview-frontend-task#readme",
+  "dependencies": {
+    "lodash": "4.17.5",
+    "next": "5.1.0",
+    "react": "16.3.2",
+    "react-dom": "16.3.2",
+    "semantic-ui-react": "0.79.1"
+  }
+}
