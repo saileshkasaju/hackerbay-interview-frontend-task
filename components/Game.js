@@ -27,6 +27,37 @@ class Game extends React.Component {
       startPosition
     }
   }
+  componentDidMount() {
+    this.body = document.querySelector('body');
+    this.body.onkeydown = (e) => {
+      if (!e.metaKey) {
+        e.preventDefault();
+      }
+      const { startPosition } = this.state;
+      const { width, height } = this.props;
+      let [y, x] = startPosition.split('-').map(each => Number(each));
+      if (e.keyCode === 38) {
+        y = y - 1;
+      }
+      if (e.keyCode === 40) {
+        y = y + 1;
+      }
+      if (e.keyCode === 37) {
+        x = x - 1;
+      }
+      if (e.keyCode === 39) {
+        x = x + 1;
+      }
+      if (x >= 0 && x < width && y >= 0 && y < height) {
+        const newPos = `${y}-${x}`;
+        if (this.activeCells.includes(newPos)) {
+          const index = this.activeCells.indexOf(newPos);
+          this.activeCells = [...this.activeCells.slice(0, index), ...this.activeCells.slice(index + 1)];
+        }
+        this.setState({ startPosition: newPos});
+      }
+    };
+  }
   componentWillUnmount() {
     this.finishGame();
   }
