@@ -5,7 +5,7 @@ class Cell extends React.Component {
   };
   render() {
     let className = 'cell';
-    if (this.active()) className += ' active';
+    if (this.active()) className += ' enemy';
     if (this.props.id === this.props.startPosition) className += ' hero';
     return [
       <style jsx="true" key="cellStyle">
@@ -19,7 +19,7 @@ class Cell extends React.Component {
             margin-right: 4px;
           }
 
-          .active {
+          .enemy {
             background-image: url("/static/mushroom.png");
             background-repeat: no-repeat;
           }
@@ -27,14 +27,6 @@ class Cell extends React.Component {
           .hero {
             background-image: url("/static/mario.png");
             background-repeat: no-repeat;
-          }
-
-          .guess-true {
-            background-color: #00cc00;
-          }
-
-          .guess-false {
-            background-color: #cc0000;
           }
         `}
       </style>,

@@ -47,7 +47,7 @@ var Cell = function (_React$Component) {
     key: 'render',
     value: function render() {
       var className = 'cell';
-      if (this.active()) className += ' active';
+      if (this.active()) className += ' enemy';
       if (this.props.id === this.props.startPosition) className += ' hero';
       return [__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'style',
@@ -56,10 +56,10 @@ var Cell = function (_React$Component) {
             lineNumber: 11
           }
         },
-        '\n          .cell {\n            width: 100px;\n            height: 100px;\n            display: inline-block;\n            border: 1px solid #aaa;\n            background: #f8f8f8;\n            margin-right: 4px;\n          }\n\n          .active {\n            background-image: url("/static/mushroom.png");\n            background-repeat: no-repeat;\n          }\n\n          .hero {\n            background-color: #333;\n          }\n\n          .guess-true {\n            background-color: #00cc00;\n          }\n\n          .guess-false {\n            background-color: #cc0000;\n          }\n        '
+        '\n          .cell {\n            width: 100px;\n            height: 100px;\n            display: inline-block;\n            border: 1px solid #aaa;\n            background: #f8f8f8;\n            margin-right: 4px;\n          }\n\n          .enemy {\n            background-image: url("/static/mushroom.png");\n            background-repeat: no-repeat;\n          }\n\n          .hero {\n            background-image: url("/static/mario.png");\n            background-repeat: no-repeat;\n          }\n        '
       ), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: className, key: 'cell', __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 33
         }
       })];
     }
@@ -99,4 +99,4 @@ var _default = Cell;
 /***/ })
 
 })
-//# sourceMappingURL=3.02c416e9af0de7576309.hot-update.js.map
+//# sourceMappingURL=3.e20ebcf879f4a5a38689.hot-update.js.map
