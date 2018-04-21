@@ -1,26 +1,12 @@
+
 class Cell extends React.Component {
   active = () => {
     return this.props.activeCells.indexOf(this.props.id) >= 0;
   };
-  // handleClick = () => {
-  //   this.props.recordGuess({
-  //     cellId: this.props.id,
-  //     userGuessIsCorrect: this.active(),
-  //   });
-  // };
-  // guessState = () => {
-  //   if (this.props.correctGuesses.indexOf(this.props.id) >= 0) {
-  //     return true;
-  //   } else if (this.props.wrongGuesses.indexOf(this.props.id) >= 0) {
-  //     return false;
-  //   }
-  // };
   render() {
-    // const { gameState } = this.props;
     let className = 'cell';
     if (this.active()) className += ' active';
     if (this.props.id === this.props.startPosition) className += ' hero';
-    // className += ` guess-${this.guessState()}`
     return [
       <style jsx="true" key="cellStyle">
         {`
@@ -34,11 +20,13 @@ class Cell extends React.Component {
           }
 
           .active {
-            background-color: #058bda;
+            background-image: url("/static/mushroom.png");
+            background-repeat: no-repeat;
           }
 
           .hero {
-            background-color: #333;
+            background-image: url("/static/mario.png");
+            background-repeat: no-repeat;
           }
 
           .guess-true {

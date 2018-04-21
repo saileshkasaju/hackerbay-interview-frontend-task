@@ -1,4 +1,4 @@
-import { Button, Header, Icon, Modal, Input } from 'semantic-ui-react'
+import { Button, Header, Modal, Input } from 'semantic-ui-react'
 import Game from './Game';
 
 class GameWrapper extends React.Component {
@@ -30,48 +30,48 @@ class GameWrapper extends React.Component {
       this.setState({ selectedModal: modalName });
     }
   };
-
   handleChange = (e, { name, value }) =>
     this.setState({ [name]: Number(value) });
+  finishGame = () => {
+    this.setState({ selectedModal: '', hasGameStarted: false });
+  };
   render() {
     const { width, height, selectedModal, hasGameStarted } = this.state;
     return (
       <div>
         {hasGameStarted && (
-          <Game {...this.props} {...this.state} />
+          <Game finishGame={this.finishGame} {...this.props} {...this.state} />
         )}
         {!hasGameStarted && (
           <div>
             <Modal
               trigger={<Button onClick={() => this.selectModal('setWidth')}>Start Game</Button>}
               open={selectedModal === 'setWidth'}
-              basic
-              size='tiny'
+              size="tiny"
             >
-              <Header icon='resize horizontal' content='Board width' />
+              <Header icon="resize horizontal" content="Board width" />
               <Modal.Content>
                 <h3>Please enter board width.</h3>
                 <Input name="width" value={width} onChange={this.handleChange} />
               </Modal.Content>
               <Modal.Actions>
-                <Button color='green' onClick={() => this.selectModal('setHeight')} inverted>
-                  <Icon name='checkmark' /> Got it
+                <Button positive onClick={() => this.selectModal('setHeight')}>
+                  Submit
                 </Button>
               </Modal.Actions>
             </Modal>
             <Modal
               open={selectedModal === 'setHeight'}
-              basic
-              size='tiny'
+              size="tiny"
             >
-              <Header icon='resize vertical' content='Board height' />
+              <Header icon="resize vertical" content="Board height" />
               <Modal.Content>
                 <h3>Please enter board height.</h3>
                 <Input name="height" value={height} onChange={this.handleChange} />
               </Modal.Content>
               <Modal.Actions>
-                <Button color='green' onClick={() => this.selectModal('')} inverted>
-                  <Icon name='checkmark' /> Got it
+                <Button color="green" onClick={() => this.selectModal('')}>
+                  Submit
                 </Button>
               </Modal.Actions>
             </Modal>

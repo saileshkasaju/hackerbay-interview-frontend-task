@@ -1,5 +1,5 @@
 import Layout from '../components/Layout';
-import Container from '../components/Container';
+import GameWrapper from '../components/GameWrapper';
 
 const App = () => (
   <Layout>
@@ -10,7 +10,7 @@ const App = () => (
       }
     `}
     </style>
-    <Container />
+    <GameWrapper />
   </Layout>
 );
 

@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { Header, Modal, Button, Icon } from 'semantic-ui-react';
 import Row from './Row';
 import Cell from './Cell';
 
@@ -20,7 +21,7 @@ class Game extends React.Component {
     const inactiveCells = flatMatrix.filter((eachCell) => this.activeCells.indexOf(eachCell) === -1);
     const startPosition = inactiveCells[Math.floor(Math.random() * inactiveCells.length)];
     this.state = {
-      gameStatus: 'ready',
+      isGameOver: false,
       totalSteps: 0,
       gameScore: 0,
       totalEnemies,
@@ -28,6 +29,7 @@ class Game extends React.Component {
     }
   }
   componentDidMount() {
+    this.totalMoves = 0;
     this.body = document.querySelector('body');
     this.body.onkeydown = (e) => {
       if (!e.metaKey) {
@@ -49,29 +51,23 @@ class Game extends React.Component {
         x = x + 1;
       }
       if (x >= 0 && x < width && y >= 0 && y < height) {
+        this.totalMoves = this.totalMoves + 1;
         const newPos = `${y}-${x}`;
         if (this.activeCells.includes(newPos)) {
           const index = this.activeCells.indexOf(newPos);
           this.activeCells = [...this.activeCells.slice(0, index), ...this.activeCells.slice(index + 1)];
         }
-        this.setState({ startPosition: newPos});
+        if (this.activeCells.length === 0) {
+          this.setState({ isGameOver: true });
+        }
+        this.setState({ startPosition: newPos });
       }
     };
   }
-  componentWillUnmount() {
-    this.finishGame();
-  }
-  finishGame = (gameState) => {
-    // the game is over
-    // so set score and cleanup
-  };
 
-  movePiece = ({ cellId, hasFoundEnemy }) => {
-    let { gameStatus} = this.state;
-  };
   render() {
-    const { gameState } = this.state;
-    const {  } = this.props;
+    console.log(this.props.createNewGame);
+    const { isGameOver } = this.state;
     return (
       <div className="grid">
         {this.matrix.map((row, ri) => (
@@ -85,6 +81,20 @@ class Game extends React.Component {
             ))}
           </Row>
         ))}
+        {isGameOver &&
+        <Modal
+          open basic size="tiny"
+        >
+          <Header icon="resize vertical" content="Game Over" />
+          <Modal.Content>
+            <h3>Total moves to save princess: {this.totalMoves}</h3>
+          </Modal.Content>
+          <Modal.Actions>
+            <Button color="green" onClick={() => this.props.finishGame()} inverted>
+              <Icon name="checkmark" /> New Game
+            </Button>
+          </Modal.Actions>
+        </Modal>}
       </div>
     );
   }

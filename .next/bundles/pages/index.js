@@ -49,37 +49,21 @@ var Cell = function (_React$Component) {
 
   _createClass(Cell, [{
     key: 'render',
-
-    // handleClick = () => {
-    //   this.props.recordGuess({
-    //     cellId: this.props.id,
-    //     userGuessIsCorrect: this.active(),
-    //   });
-    // };
-    // guessState = () => {
-    //   if (this.props.correctGuesses.indexOf(this.props.id) >= 0) {
-    //     return true;
-    //   } else if (this.props.wrongGuesses.indexOf(this.props.id) >= 0) {
-    //     return false;
-    //   }
-    // };
     value: function render() {
-      // const { gameState } = this.props;
       var className = 'cell';
       if (this.active()) className += ' active';
       if (this.props.id === this.props.startPosition) className += ' hero';
-      // className += ` guess-${this.guessState()}`
       return [__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'style',
         { jsx: 'true', key: 'cellStyle', __source: {
             fileName: _jsxFileName,
-            lineNumber: 25
+            lineNumber: 11
           }
         },
-        '\n          .cell {\n            width: 100px;\n            height: 100px;\n            display: inline-block;\n            border: 1px solid #aaa;\n            background: #f8f8f8;\n            margin-right: 4px;\n          }\n\n          .active {\n            background-color: #058bda;\n          }\n\n          .hero {\n            background-color: #333;\n          }\n\n          .guess-true {\n            background-color: #00cc00;\n          }\n\n          .guess-false {\n            background-color: #cc0000;\n          }\n        '
+        '\n          .cell {\n            width: 100px;\n            height: 100px;\n            display: inline-block;\n            border: 1px solid #aaa;\n            background: #f8f8f8;\n            margin-right: 4px;\n          }\n\n          .active {\n            background-image: url("/static/mushroom.png");\n            background-repeat: no-repeat;\n          }\n\n          .hero {\n            background-image: url("/static/mario.png");\n            background-repeat: no-repeat;\n          }\n\n          .guess-true {\n            background-color: #00cc00;\n          }\n\n          .guess-false {\n            background-color: #cc0000;\n          }\n        '
       ), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: className, key: 'cell', __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 41
         }
       })];
     }
@@ -118,118 +102,6 @@ var _default = Cell;
 
 /***/ }),
 
-/***/ "./components/Container.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__GameWrapper__ = __webpack_require__("./components/GameWrapper.js");
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _jsxFileName = '/home/sailesh/workspace/freelance/hackerbay/hackerbay-interview-frontend-task/components/Container.js';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-
-
-(function () {
-  var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
-
-  enterModule && enterModule(module);
-})();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-var Container = function (_React$Component) {
-  _inherits(Container, _React$Component);
-
-  function Container() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, Container);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Container.__proto__ || Object.getPrototypeOf(Container)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      gameId: 1
-    }, _this.createNewGame = function () {
-      return _this.setState(function (state) {
-        return { gameId: state.gameId + 1 };
-      });
-    }, _this.resetGame = function () {
-      return _this.setState({ gameId: 1 });
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  _createClass(Container, [{
-    key: 'render',
-    value: function render() {
-      var actions = {
-        newGame: this.createNewGame,
-        resetGame: this.resetGame
-      };
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 18
-          }
-        },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__GameWrapper__["a" /* default */], _extends({ actions: actions }, this.state, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 19
-          }
-        }))
-      );
-    }
-  }, {
-    key: '__reactstandin__regenerateByEval',
-    value: function __reactstandin__regenerateByEval(key, code) {
-      this[key] = eval(code);
-    }
-  }]);
-
-  return Container;
-}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
-
-var _default = Container;
-
-
-/* harmony default export */ __webpack_exports__["a"] = (_default);
-;
-
-(function () {
-  var reactHotLoader = __webpack_require__("./node_modules/react-hot-loader/index.js").default;
-
-  var leaveModule = __webpack_require__("./node_modules/react-hot-loader/index.js").leaveModule;
-
-  if (!reactHotLoader) {
-    return;
-  }
-
-  reactHotLoader.register(Container, 'Container', '/home/sailesh/workspace/freelance/hackerbay/hackerbay-interview-frontend-task/components/Container.js');
-  reactHotLoader.register(_default, 'default', '/home/sailesh/workspace/freelance/hackerbay/hackerbay-interview-frontend-task/components/Container.js');
-  leaveModule(module);
-})();
-
-;
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module)))
-
-/***/ }),
-
 /***/ "./components/Game.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -238,8 +110,9 @@ var _default = Container;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash__ = __webpack_require__("./node_modules/lodash/lodash.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Row__ = __webpack_require__("./components/Row.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Cell__ = __webpack_require__("./components/Cell.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__ = __webpack_require__("./node_modules/semantic-ui-react/dist/es/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Row__ = __webpack_require__("./components/Row.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Cell__ = __webpack_require__("./components/Cell.js");
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _jsxFileName = '/home/sailesh/workspace/freelance/hackerbay/hackerbay-interview-frontend-task/components/Game.js';
@@ -256,8 +129,6 @@ var _createClass = function () { function defineProperties(target, props) { for 
   enterModule && enterModule(module);
 })();
 
-function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
-
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -270,6 +141,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
 var Game = function (_React$Component) {
   _inherits(Game, _React$Component);
 
@@ -277,17 +149,6 @@ var Game = function (_React$Component) {
     _classCallCheck(this, Game);
 
     var _this = _possibleConstructorReturn(this, (Game.__proto__ || Object.getPrototypeOf(Game)).call(this, props));
-
-    _this.finishGame = function (gameState) {
-      // the game is over
-      // so set score and cleanup
-    };
-
-    _this.movePiece = function (_ref) {
-      var cellId = _ref.cellId,
-          hasFoundEnemy = _ref.hasFoundEnemy;
-      var gameStatus = _this.state.gameStatus;
-    };
 
     _this.matrix = [];
     var width = props.width,
@@ -308,7 +169,7 @@ var Game = function (_React$Component) {
     });
     var startPosition = inactiveCells[Math.floor(Math.random() * inactiveCells.length)];
     _this.state = {
-      gameStatus: 'ready',
+      isGameOver: false,
       totalSteps: 0,
       gameScore: 0,
       totalEnemies: totalEnemies,
@@ -322,6 +183,7 @@ var Game = function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
+      this.totalMoves = 0;
       this.body = document.querySelector('body');
       this.body.onkeydown = function (e) {
         if (!e.metaKey) {
@@ -352,57 +214,115 @@ var Game = function (_React$Component) {
           x = x + 1;
         }
         if (x >= 0 && x < width && y >= 0 && y < height) {
+          _this2.totalMoves = _this2.totalMoves + 1;
           var newPos = y + '-' + x;
           if (_this2.activeCells.includes(newPos)) {
             var index = _this2.activeCells.indexOf(newPos);
             _this2.activeCells = [].concat(_toConsumableArray(_this2.activeCells.slice(0, index)), _toConsumableArray(_this2.activeCells.slice(index + 1)));
+          }
+          if (_this2.activeCells.length === 0) {
+            _this2.setState({ isGameOver: true });
           }
           _this2.setState({ startPosition: newPos });
         }
       };
     }
   }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      this.finishGame();
-    }
-  }, {
     key: 'render',
     value: function render() {
       var _this3 = this;
 
-      var gameState = this.state.gameState;
-
-      _objectDestructuringEmpty(this.props);
+      console.log(this.props.createNewGame);
+      var isGameOver = this.state.isGameOver;
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: 'grid', __source: {
             fileName: _jsxFileName,
-            lineNumber: 76
+            lineNumber: 72
           }
         },
         this.matrix.map(function (row, ri) {
           return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_2__Row__["a" /* default */],
+            __WEBPACK_IMPORTED_MODULE_3__Row__["a" /* default */],
             { key: 'row-' + ri, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 78
+                lineNumber: 74
               }
             },
             row.map(function (cellId) {
-              return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Cell__["a" /* default */], _extends({
+              return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Cell__["a" /* default */], _extends({
                 key: 'cell-' + cellId, id: cellId,
                 movePiece: _this3.movePiece, activeCells: _this3.activeCells
               }, _this3.state, {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 80
+                  lineNumber: 76
                 }
               }));
             })
           );
-        })
+        }),
+        isGameOver && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["e" /* Modal */],
+          {
+            open: true, basic: true, size: 'tiny',
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 85
+            }
+          },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["b" /* Header */], { icon: 'resize vertical', content: 'Game Over', __source: {
+              fileName: _jsxFileName,
+              lineNumber: 88
+            }
+          }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["e" /* Modal */].Content,
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 89
+              }
+            },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'h3',
+              {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 90
+                }
+              },
+              'Total moves to save princess: ',
+              this.totalMoves
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["e" /* Modal */].Actions,
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 92
+              }
+            },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["a" /* Button */],
+              { color: 'green', onClick: function onClick() {
+                  return _this3.props.finishGame();
+                }, inverted: true, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 93
+                }
+              },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_semantic_ui_react__["c" /* Icon */], { name: 'checkmark', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 94
+                }
+              }),
+              ' New Game'
+            )
+          )
+        )
       );
     }
   }, {
@@ -521,6 +441,8 @@ var GameWrapper = function (_React$Component) {
       var name = _ref2.name,
           value = _ref2.value;
       return _this.setState(_defineProperty({}, name, Number(value)));
+    }, _this.finishGame = function () {
+      _this.setState({ selectedModal: '', hasGameStarted: false });
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -540,13 +462,13 @@ var GameWrapper = function (_React$Component) {
         {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 39
+            lineNumber: 41
           }
         },
-        hasGameStarted && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Game__["a" /* default */], _extends({}, this.props, this.state, {
+        hasGameStarted && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Game__["a" /* default */], _extends({ finishGame: this.finishGame }, this.props, this.state, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 41
+            lineNumber: 43
           }
         })),
         !hasGameStarted && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -554,7 +476,7 @@ var GameWrapper = function (_React$Component) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 44
+              lineNumber: 46
             }
           },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -566,22 +488,21 @@ var GameWrapper = function (_React$Component) {
                     return _this2.selectModal('setWidth');
                   }, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 46
+                    lineNumber: 48
                   }
                 },
                 'Start Game'
               ),
               open: selectedModal === 'setWidth',
-              basic: true,
               size: 'tiny',
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 45
+                lineNumber: 47
               }
             },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_semantic_ui_react__["b" /* Header */], { icon: 'resize horizontal', content: 'Board width', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 51
+                lineNumber: 52
               }
             }),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -589,7 +510,7 @@ var GameWrapper = function (_React$Component) {
               {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 52
+                  lineNumber: 53
                 }
               },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -597,14 +518,14 @@ var GameWrapper = function (_React$Component) {
                 {
                   __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 53
+                    lineNumber: 54
                   }
                 },
                 'Please enter board width.'
               ),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_semantic_ui_react__["d" /* Input */], { name: 'width', value: width, onChange: this.handleChange, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 54
+                  lineNumber: 55
                 }
               })
             ),
@@ -613,24 +534,19 @@ var GameWrapper = function (_React$Component) {
               {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 56
+                  lineNumber: 57
                 }
               },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1_semantic_ui_react__["a" /* Button */],
-                { color: 'green', onClick: function onClick() {
+                { positive: true, onClick: function onClick() {
                     return _this2.selectModal('setHeight');
-                  }, inverted: true, __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 57
-                  }
-                },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_semantic_ui_react__["c" /* Icon */], { name: 'checkmark', __source: {
+                  }, __source: {
                     fileName: _jsxFileName,
                     lineNumber: 58
                   }
-                }),
-                ' Got it'
+                },
+                'Submit'
               )
             )
           ),
@@ -638,11 +554,10 @@ var GameWrapper = function (_React$Component) {
             __WEBPACK_IMPORTED_MODULE_1_semantic_ui_react__["e" /* Modal */],
             {
               open: selectedModal === 'setHeight',
-              basic: true,
               size: 'tiny',
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 62
+                lineNumber: 63
               }
             },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_semantic_ui_react__["b" /* Header */], { icon: 'resize vertical', content: 'Board height', __source: {
@@ -686,17 +601,12 @@ var GameWrapper = function (_React$Component) {
                 __WEBPACK_IMPORTED_MODULE_1_semantic_ui_react__["a" /* Button */],
                 { color: 'green', onClick: function onClick() {
                     return _this2.selectModal('');
-                  }, inverted: true, __source: {
+                  }, __source: {
                     fileName: _jsxFileName,
                     lineNumber: 73
                   }
                 },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_semantic_ui_react__["c" /* Icon */], { name: 'checkmark', __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 74
-                  }
-                }),
-                ' Got it'
+                'Submit'
               )
             )
           )
@@ -57821,7 +57731,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Layout__ = __webpack_require__("./components/Layout.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Container__ = __webpack_require__("./components/Container.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_GameWrapper__ = __webpack_require__("./components/GameWrapper.js");
 var _jsxFileName = '/home/sailesh/workspace/freelance/hackerbay/hackerbay-interview-frontend-task/pages/index.js';
 
 
@@ -57846,9 +57756,9 @@ var App = function App() {
     },
     __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a, {
       styleId: '1619803146',
-      css: 'body.jsx-1619803146{text-align:center;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzL2luZGV4LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQU1PLEFBRzJCLGtCQUNwQiIsImZpbGUiOiJwYWdlcy9pbmRleC5qcyIsInNvdXJjZVJvb3QiOiIvaG9tZS9zYWlsZXNoL3dvcmtzcGFjZS9mcmVlbGFuY2UvaGFja2VyYmF5L2hhY2tlcmJheS1pbnRlcnZpZXctZnJvbnRlbmQtdGFzayIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBMYXlvdXQgZnJvbSAnLi4vY29tcG9uZW50cy9MYXlvdXQnO1xuaW1wb3J0IENvbnRhaW5lciBmcm9tICcuLi9jb21wb25lbnRzL0NvbnRhaW5lcic7XG5cbmNvbnN0IEFwcCA9ICgpID0+IChcbiAgPExheW91dD5cbiAgICA8c3R5bGUganN4PlxuICAgICAge2BcbiAgICAgIGJvZHkge1xuICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgICB9XG4gICAgYH1cbiAgICA8L3N0eWxlPlxuICAgIDxDb250YWluZXIgLz5cbiAgPC9MYXlvdXQ+XG4pO1xuXG5leHBvcnQgZGVmYXVsdCBBcHA7XG4iXX0= */\n/*@ sourceURL=pages/index.js */'
+      css: 'body.jsx-1619803146{text-align:center;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzL2luZGV4LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQU1PLEFBRzJCLGtCQUNwQiIsImZpbGUiOiJwYWdlcy9pbmRleC5qcyIsInNvdXJjZVJvb3QiOiIvaG9tZS9zYWlsZXNoL3dvcmtzcGFjZS9mcmVlbGFuY2UvaGFja2VyYmF5L2hhY2tlcmJheS1pbnRlcnZpZXctZnJvbnRlbmQtdGFzayIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBMYXlvdXQgZnJvbSAnLi4vY29tcG9uZW50cy9MYXlvdXQnO1xuaW1wb3J0IEdhbWVXcmFwcGVyIGZyb20gJy4uL2NvbXBvbmVudHMvR2FtZVdyYXBwZXInO1xuXG5jb25zdCBBcHAgPSAoKSA9PiAoXG4gIDxMYXlvdXQ+XG4gICAgPHN0eWxlIGpzeD5cbiAgICAgIHtgXG4gICAgICBib2R5IHtcbiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgfVxuICAgIGB9XG4gICAgPC9zdHlsZT5cbiAgICA8R2FtZVdyYXBwZXIgLz5cbiAgPC9MYXlvdXQ+XG4pO1xuXG5leHBvcnQgZGVmYXVsdCBBcHA7XG4iXX0= */\n/*@ sourceURL=pages/index.js */'
     }),
-    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_Container__["a" /* default */], {
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_GameWrapper__["a" /* default */], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 13
